@@ -39,10 +39,10 @@
                 <li>Logo, slogan</li>
             </ul>
             
-        <h1>Luce Joints, Stiff Knees LLC</h1>
+        <h1>Little Meadows Holistic Health LLC</h1>
             <h2>Ben Luce, D.O. (and friends)</h2>
                 <h3>About us</h3>
-                    <p>Luce Joints, Stiff Knees is a primary care practice designed to take care of you in your own home. No need to wait in the doctors office for long wait periods. We believe in providing excellent care to members of our community, and strive to meet each patient's needs.</p>
+                    <p>Little Meadows Holistic Health is a primary care practice designed to take care of you in your own home. No need to wait in the doctors office for long wait periods. We believe in providing excellent care to members of our community, and strive to meet each patient's needs.</p>
                     
                     <h4>Meet the doctors</h4>
                         <h5>Ben Luce, D.O.</h5>

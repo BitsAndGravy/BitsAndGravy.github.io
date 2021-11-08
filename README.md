@@ -1,15 +1,17 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Ben Test</title>
+        <title>Freedom FHW</title>
         <meta charset="utf-8">
         <style>
             body {
                 background-color: rgb(214, 249, 255);
+                font-family: sans-serif;
             }
             
             h1 {
                 color: rgb(0, 0, 0);
+                font-family: Georgia;
             }
             
             h2 {
@@ -29,20 +31,39 @@
                 color: rgb(78, 140, 181);
             }
             
+            #title-div {
+                background-color: rgb(250, 202, 8);
+                margin: 5px;
+                padding: 30px;
+                
+            }
+            
+            #main-content {
+                background-color: rgb(255, 87, 210);
+                margin: 5px;
+                padding: 10px;
+                width: 60%;
+                float:left;
+            }
+            
+            #contact-info {
+                background-color: rgb(13, 250, 21);
+                margin: 5px;
+                padding: 10px;
+                float:right;
+                width: 25%;
+            }
         </style>
     </head>
     <body>
-        <h1>(Suggestions for business)</h1>
-            <ul>
-                <li>Business email, phone</li>
-                <li>Business card</li>
-                <li>Logo, slogan</li>
-            </ul>
-            
-        <h1>Little Meadows Holistic Health LLC</h1>
+        <div id="title-div">
+        <h1>Freedom Family Health and Wellness</h1>
+        
             <h2>Ben Luce, D.O. (and friends)</h2>
+        </div>
+        <div id="main-content">
                 <h3>About us</h3>
-                    <p>Little Meadows Holistic Health is a primary care practice designed to take care of you in your own home. No need to wait in the doctors office for long wait periods. We believe in providing excellent care to members of our community, and strive to meet each patient's needs.</p>
+                    <p>Freedom Family Health and Wellness is a primary care practice designed to take care of you in your own home. No need to wait in the doctors office for long wait periods. We believe in providing excellent care to members of our community, and strive to meet each patient's needs.</p>
                     
                     <h4>Meet the doctors</h4>
                         <h5>Ben Luce, D.O.</h5>
@@ -60,7 +81,8 @@
                         <li>Primary Care</li>
                         <li>Diabetes Education</li>
                     </ul>
-                
+            </div>
+            <div id="contact-info">
                 <h3>Contact Us</h3>
                     <p>For more information on any of our services, or to request an appointment, fill out the form below, and we will get back to you as soon as we can. Thanks for your consideration!</p>
                     <ol>
@@ -69,7 +91,7 @@
                         <li>Reason for contact</li>
                         <li>Message</li>
                     </ol>
-                    
+            </div>
                         
     </body>
 </html>

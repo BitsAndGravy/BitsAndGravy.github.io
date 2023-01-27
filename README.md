@@ -56,42 +56,133 @@
         </style>
     </head>
     <body>
-        <div id="title-div">
-        <h1>Freedom Family Health and Wellness</h1>
-        
-            <h2>Ben Luce, D.O. (and friends)</h2>
-        </div>
-        <div id="main-content">
-                <h3>About us</h3>
-                    <p>Freedom Family Health and Wellness is a primary care practice designed to take care of you in your own home. No need to wait in the doctors office for long wait periods. We believe in providing excellent care to members of our community, and strive to meet each patient's needs.</p>
-                    
-                    <h4>Meet the doctors</h4>
-                        <h5>Ben Luce, D.O.</h5>
-                            <p>Ben Luce is a Friendsville native. After completing school at ___ in 20xx, he completed a residency program at the local Something Hospital. He has earned **these degrees and certificates.Eager to provide individualized care to his patients, he decided to open his own practice with a team of other healthcare professionals. <br> 
-                            Ben lives with his wife Lillie and their dog, Atlas. He enjoys archery, hiking, and whatever the outdoors has to offer.</p>
-                            
-                        <h5>Other Person, Pharm.D.</h5>
-                            <p>Other person is a pharmacist, graduated here and lives there. This guy wants to provide personalized care by working with individuals to acheive health goals by educating and coaching his patients.</p>
-                            
-                <h3>Services</h3>
-                    <p>We believe that a variety of services is integral in providing excellent care to the community. Contact us if you or someone you know would benefit from these services, or if you would like to learn more about them:</p>
-                    <ul>
-                        <li>Chiropracty</li>
-                        <li>Immunizations</li>
-                        <li>Primary Care</li>
-                        <li>Diabetes Education</li>
-                    </ul>
-            </div>
-            <div id="contact-info">
-                <h3>Contact Us</h3>
-                    <p>For more information on any of our services, or to request an appointment, fill out the form below, and we will get back to you as soon as we can. Thanks for your consideration!</p>
-                    <ol>
-                        <li>First name</li>
-                        <li>Last name</li>
-                        <li>Reason for contact</li>
-                        <li>Message</li>
-                    </ol>
-            </div>
-                        
+    /* 
+My bookshelf!
+See a few books I have read.
+
+Press the "Restart" button to change the color of the books.
+
+Sorry all of the text is so small...
+I had a vision of books with the spines 
+facing out on some shelves, and the face
+outward on the other shelves... by the time
+I got to the book information I had little space left.
+*/
+
+background(178, 227, 157);
+
+//Bookcase
+var bookCase = {
+    width: 360, //Changes how wide the whole case is (from the middle)
+    height: 288, //Changes how tall the case is (from the bottom)
+    sideWidth: 18, //Changes width of the rects on the far left/right 
+    shelf: {
+        spacing: 87, //How much space is between each shelf
+        height: 12, //How thick each shelf is
+    }
+};
+    
+    //Backing of the book shelf
+    fill(77, 48, 21);
+    rect(200 - bookCase.width / 2, 399 - bookCase.height, bookCase.width, bookCase.height);
+    
+    //Left side of case
+    fill(189, 78, 23);
+    rect(200 - bookCase.width / 2, 399 - bookCase.height, bookCase.sideWidth, bookCase.height);
+    
+    //Right side of case
+    rect(200 + bookCase.width / 2 - bookCase.sideWidth, 399 - bookCase.height, bookCase.sideWidth, bookCase.height);
+    
+    //Shelves
+    for(var i = 0; i < 7; i++) {
+        rect(200 - bookCase.width / 2 + bookCase.sideWidth, 399 - bookCase.height + i * bookCase.shelf.spacing, bookCase.width - bookCase.sideWidth * 2, bookCase.shelf.height);
+    }
+    
+//books with spine showing
+    //Defining variables
+    var book = {
+        height: 15, //inverse of height; higher numbers make shorter books
+        width: 15,
+        //Do not know the best way to have JS choose a random color
+        colorR: 225,
+        colorG: 225,
+        colorB: 225,
+        xPos: 10,
+        yPos: 10,
+        num: 0,
+        spacing: 5,
+        information: [
+            {title: "The \nHobbit", author: "J.R.R\nTolkein", rating: "5/5"},
+            {title: "Educated", author: "Tara \nWestover", rating: "5/5"},
+            {title: "Eragon", author: "Chris\nPaolini", rating: "4/5"},
+            {title: "1984", author: "George\nOrwell", rating: "4/5"},
+            {title: "The Great\nGatsby", author: "F. Scott\nFitzgerald", rating: "3/5"},
+            {title: "Animal\nFarm", author: "George\nOrwell", rating: "4/5"},
+            {title: "Odyssey", author: "Homer", rating: "5/5"},
+            {title: "Iliad", author: "Homer", rating: "3/5"},
+            {title: "Maze\nRunner", author: "James\nDashner", rating: "3/5"},
+            {title: "Kidnapped", author: "Robert\nStevenson", rating: "2/5"}
+            ]
+        };
+    var i = 0; // i represents what shelf the books are on (this and next loops)
+    var j = 0; // j represents which item from an array we are using (next loop)
+    textSize(10); //Used in next loop
+    
+    //Loop for making the books - select random color/size
+    while(i < 4) {
+        book.xPos = 0;
+        i++;
+        while(book.xPos < bookCase.width - bookCase.sideWidth * 2 - 15) {
+            book.height = random(15, bookCase.shelf.spacing - bookCase.shelf.height - 35);
+            book.width = random(10, 25);
+            book.colorR = random(-134, 479);
+            book.colorG = random(-140, 429);
+            book.colorB = random(-130, 563);
+            fill(book.colorR, book.colorG, book.colorB);
+        //Draw the books
+        //book.yPos is where the first shelf rests
+        book.yPos = 225 - bookCase.height + book.height; 
+        rect(book.xPos + 200 - bookCase.width / 2 + bookCase.sideWidth, book.yPos + i * bookCase.shelf.spacing * 2, book.width, bookCase.shelf.spacing -  book.height);
+        //Make sure that the books are right next to each other
+        book.xPos += book.width;
+        }
+}
+
+//books with face showing
+    //Defining variables
+    book.height = 72;
+    book.width = 62;
+    var i = 0;
+    
+    //Loop for making the books and applying title, author, and rating: - 
+    while(i < 2) {
+        i++;
+        book.num = 0;
+        while(book.num < 5) {
+            book.colorR = random(-147, 452);
+            book.colorG = random(-146, 488);
+            book.colorB = random(-139, 465);
+            fill(book.colorR, book.colorG, book.colorB);
+            
+            //Draw the books
+            book.yPos = 225 - bookCase.height - book.height; 
+            rect(47 + book.width * book.num, book.yPos + i * bookCase.shelf.spacing * 2, book.width - book.spacing, book.height);
+            
+            //Choose white text for dark books and vice versa
+            if(book.colorR + book.colorG + book.colorB < 300) {
+                fill(255, 255, 255);
+            } else {
+            fill(0, 0, 0);
+            }
+            
+            //Book information
+            text(book.information[j].title, 50 + book.width * book.num, 13 + book.yPos + i * bookCase.shelf.spacing * 2);
+            text("by " + book.information[j].author, 50 + book.width * book.num, 39 + book.yPos + i * bookCase.shelf.spacing * 2);
+            text("Rating: " +book.information[j].rating, 50 + book.width * book.num, 66 + book.yPos + i * bookCase.shelf.spacing * 2);
+            //Make sure that the books are right next to each other
+            book.num++;
+            j++;
+            }
+}
     </body>
 </html>
